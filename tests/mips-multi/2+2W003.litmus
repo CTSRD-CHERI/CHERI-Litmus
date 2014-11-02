@@ -1,0 +1,19 @@
+MIPS 2+2W003
+"PodWW Wse PodWW Wse"
+Cycle=Wse PodWW Wse PodWW
+Relax=PodWW
+Safe=Wse
+Prefetch=0:x=F,0:y=W,1:y=F,1:x=W
+Com=Ws Ws
+Orig=PodWW Wse PodWW Wse
+{
+0:r2=x; 0:r4=y; 
+1:r2=y; 1:r4=x; 
+}
+ P0           | P1           ;
+ li r1,2      | li r1,2      ;
+ sb  r1,0(r2) | sb  r1,0(r2) ;
+ li r3,1      | li r3,1      ;
+ sb  r3,0(r4) | sb  r3,0(r4) ;
+exists
+(x=2 /\ y=2)

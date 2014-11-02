@@ -1,0 +1,19 @@
+Variant of the "Litmus" tool to test memory consistency, but designed
+to work on bare-metal (no OS).  Currently, we only target CHERI but
+porting it to other architectures should be quite doable.
+
+Directory layout:
+
+  * backend: the infrastructure to run a generic litmus test
+
+  * frontend: convert litmus files into C which when compiled with the
+    backend produce a binary to be placed in CHERI's boot memory.
+
+  * tests: a set of tests (for dual-core and quad-core) produced by
+    the 'diy' tool.  These are the default PPC tests, converted to
+    MIPS.
+
+  * binaries: the make script here can take a path to a set of litmus
+    files and produce a set of binaries.
+
+Matthew N, Oct 2014

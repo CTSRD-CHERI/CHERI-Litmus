@@ -1,0 +1,20 @@
+MIPS WWC000
+"Rfe SyncdRW Rfe SyncdRW Wse"
+Cycle=Rfe SyncdRW Rfe SyncdRW Wse
+Relax=ACSyncdRW
+Safe=Wse
+Prefetch=0:x=F,1:x=F,1:y=W,2:y=F,2:x=W
+Com=Rf Rf Ws
+Orig=Rfe SyncdRW Rfe SyncdRW Wse
+{
+0:r2=x; 
+1:r2=x; 1:r4=y; 
+2:r2=y; 2:r4=x; 
+}
+ P0           | P1           | P2           ;
+ li r1,2      | lb  r1,0(r2) | lb  r1,0(r2) ;
+ sb  r1,0(r2) | sync         | sync         ;
+              | li r3,1      | li r3,1      ;
+              | sb  r3,0(r4) | sb  r3,0(r4) ;
+exists
+(x=2 /\ 1:r1=2 /\ 2:r1=1)
