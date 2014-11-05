@@ -95,10 +95,15 @@ Wrap a string in quotes.
 Inline assembley
 ================
 
-Obtain the outcome vector from a test.
+Obtain the outcome vector names from a test.
 
-> outcomeVector :: Test -> [Var]
-> outcomeVector test = [v | (v, _) <- testPost test]
+> outcomeVectorNames :: Test -> [Var]
+> outcomeVectorNames test = [v | (v, _) <- testPost test]
+
+Obtain the outcome vector values from a test.
+
+> outcomeVectorValues :: Test -> [Integer]
+> outcomeVectorValues test = [v | (_, v) <- testPost test]
 
 Return a chunk of inline assembley for a given process in a test.
 
@@ -135,7 +140,7 @@ Return a chunk of inline assembley for a given process in a test.
 >   
 >     [ "test.outcome[" ++ show i ++ "] = out"
 >            ++ show (elemIndexError v outRegs) ++ ";"
->     | (Reg p v, i) <- zip (outcomeVector test) [0..], p == pid
+>     | (Reg p v, i) <- zip (outcomeVectorNames test) [0..], p == pid
 >     ] ++
 >
 >     [ "arch_barrier_down();" ] ++
@@ -143,7 +148,7 @@ Return a chunk of inline assembley for a given process in a test.
 >     ( if   pid /= 0 then []
 >       else [ " test.outcome[" ++ show i ++ "] = *test.vars["
 >                   ++ show (lookupError v varMap) ++ "];"
->            | (Mem v, i) <- zip (outcomeVector test) [0..]
+>            | (Mem v, i) <- zip (outcomeVectorNames test) [0..]
 >            ]
 >     ) ++
 >
@@ -223,11 +228,14 @@ Translation
 >    , "#define LEN_OUTCOME " ++ show lenOutcome
 >    , "#define OUTCOME_NAMES { " ++
 >        consperse "," (map quote outcomeNames) ++ " }"
+>    , "#define OUTCOME_SOUGHT { " ++
+>        consperse "," outcomeVals ++ " }"
 >    , ""
 >    , "#endif"
 >    ]
 >  where
 >    numProcesses = length (testCode test)
 >    numVars      = length (sharedVars test)
->    outcomeNames = map show (outcomeVector test)
+>    outcomeNames = map show (outcomeVectorNames test)
+>    outcomeVals  = map show (outcomeVectorValues test)
 >    lenOutcome   = length outcomeNames

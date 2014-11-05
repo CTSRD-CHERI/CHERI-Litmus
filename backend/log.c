@@ -105,20 +105,26 @@ void log_update()
 void log_display_outcome()
 {
   char* outcome_names[] = OUTCOME_NAMES;
+  var_t sought[] = OUTCOME_SOUGHT;
+  int found = 0;
   for (int i = 0; i < HASH_TABLE_SIZE; i++) {
     log_entry_t *entry = global_log.hash_table + i;
     if (entry->count != 0) {
       put_uint64(entry->count);
       put_string(": ");
+      int got = 1;
       for (int j = 0; j < LEN_OUTCOME; j++) {
+        if (entry->outcome[j] != sought[j]) got = 0;
         put_string(outcome_names[j]);
         put_string("=");
         put_uint32((uint32_t) entry->outcome[j]);
         put_string(" ");
       }
+      if (got == 1) found = 1;
       put_string("\n");
     }
   }
+  put_string(found ? "OBSERVED\n" : "NOT OBSERVED\n");
 }
 
 void log_display_headstart()
