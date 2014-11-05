@@ -1,0 +1,10 @@
+Dependencies to build the Haskell:
+
+  sudo apt-get install ghc
+  sudo apt-get install haskell-platform
+
+Dependencies to build the Litmus binaries for CHERI:
+
+  (from the Embedian repository)
+
+  sudo apt-get install gcc-4.4-mips-linux-gnu
