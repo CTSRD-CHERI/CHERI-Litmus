@@ -124,7 +124,7 @@ Return a chunk of inline assembley for a given process in a test.
 >
 >   indent 2 (
 >     [ ": /* output operands */"
->     , "  " ++ consperse "," ["\"=r\"(" ++ v ++ ")" | v <- outVars]
+>     , "  " ++ consperse "," ["\"=&r\"(" ++ v ++ ")" | v <- outVars]
 >     , ": /* input operands */"
 >     , "  " ++ consperse "," ["\"r\"(" ++ input v ++ ")" | v <- inVals]
 >     ] ++
