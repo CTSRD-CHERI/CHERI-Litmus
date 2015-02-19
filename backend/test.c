@@ -29,15 +29,9 @@ void test_init(uint32_t* seed)
     *test.vars[i] = 0;
   }
   // Set random start delays
-  //for (int i = 0; i < NUM_PROCESSES; i++)
-  //  test.delays[i] = rand_k(seed, 4);
   uint32_t max = 0;
   for (int i = 0; i < NUM_PROCESSES; i++)
     if (test.start_times[i] > max) max = test.start_times[i];
-  //for (int i = 0; i < NUM_PROCESSES; i++) {
-  //  if (test.start_times[i] < max)
-  //    test.delays[i] =  (test.delays[i] +1) % 16;
-  //}
   for (int i = 0; i < NUM_PROCESSES; i++)
     test.delays[i] = rand_k(seed, test.start_times[i] < max ? 6 : 2);
 }
