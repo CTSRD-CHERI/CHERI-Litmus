@@ -27,7 +27,7 @@ void test_init(uint32_t* seed)
   // Intialise variables
   test.locs = (var_t*) LOCS_BASE;
   for (int i = 0; i < NUM_VARS; i++) {
-    test.vars[i] = &test.locs[rs[i]];
+    test.vars[i] = &test.locs[rs[i]*LOC_GRAIN];
     *test.vars[i] = 0;
   }
   // Set random start delays

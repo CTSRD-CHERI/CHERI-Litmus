@@ -11,6 +11,7 @@ Abstract syntax of litmus source files.
 >   , testPre    :: [Pre]                -- Pre-conditions
 >   , testCode   :: [(ProcessId,Code)]   -- Code for each process
 >   , testPost   :: [Post]               -- Post-conditions
+>   , testGrain  :: Int                  -- Variable grain
 >   }
 >   deriving (Show)
 

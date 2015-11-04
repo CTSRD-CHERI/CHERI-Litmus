@@ -179,6 +179,7 @@ Litmus test
 >        , testPre    = pres
 >        , testCode   = code
 >        , testPost   = posts
+>        , testGrain  = 1
 >        }
 
 Top-level parser

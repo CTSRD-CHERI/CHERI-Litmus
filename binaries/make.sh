@@ -7,7 +7,7 @@ rm -rf backend-tmp
 for FILE in $(ls $1)
 do
   cp -r ../backend/ backend-tmp
-  ../frontend/litmus $1/$FILE backend-tmp/testcase.c backend-tmp/testcase.h
+  ../frontend/litmus $1/$FILE backend-tmp/testcase.c backend-tmp/testcase.h $2
   cd backend-tmp
   ./make.sh
   cd ..
