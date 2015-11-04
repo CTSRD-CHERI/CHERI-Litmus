@@ -2,6 +2,7 @@
 #include "test.h"
 #include "arch.h"
 #include "rand.h"
+#include "heap.h"
 
 // ================
 // Global variables
@@ -24,6 +25,7 @@ void test_init(uint32_t* seed)
         if (rs[i] == rs[j]) goto retry;
   }
   // Intialise variables
+  test.locs = (var_t*) LOCS_BASE;
   for (int i = 0; i < NUM_VARS; i++) {
     test.vars[i] = &test.locs[rs[i]];
     *test.vars[i] = 0;

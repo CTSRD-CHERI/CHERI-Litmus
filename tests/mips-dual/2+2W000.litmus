@@ -12,12 +12,12 @@ Orig=PodWW Wse PodWW PodWW PodWW Wse
 }
  P0           | P1           ;
  li r1,2      | li r1,2      ;
- sb  r1,0(r2) | sb  r1,0(r2) ;
+ sw  r1,0(r2) | sw  r1,0(r2) ;
  li r3,1      | li r3,1      ;
- sb  r3,0(r4) | sb  r3,0(r4) ;
+ sw  r3,0(r4) | sw  r3,0(r4) ;
               | li r5,1      ;
-              | sb  r5,0(r6) ;
+              | sw  r5,0(r6) ;
               | li r7,1      ;
-              | sb  r7,0(r8) ;
+              | sw  r7,0(r8) ;
 exists
 (x=2 /\ y=2)

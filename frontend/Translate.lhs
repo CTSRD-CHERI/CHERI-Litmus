@@ -21,8 +21,8 @@ Convert a PPC instruction to a MIPS one.
 > instrMips :: String -> String
 > instrMips s =
 >   case s of
->     "lwz"    -> "lb "
->     "stw"    -> "sb "
+>     "lwz"    -> "lw "
+>     "stw"    -> "sw "
 >     "lwsync" -> errorMessage s
 >     "eieio"  -> errorMessage s
 >     "isync"  -> errorMessage s

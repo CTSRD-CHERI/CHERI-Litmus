@@ -224,7 +224,7 @@ Translation
 >    , "#define NUM_PROCESSES " ++ show numProcesses
 >    , "#define NUM_ITERATIONS 1000"
 >    , "#define NUM_VARS " ++ show numVars
->    , "#define NUM_LOCS " ++ show (numVars * 128)
+>    , "#define NUM_LOCS 1000000"
 >    , "#define LEN_OUTCOME " ++ show lenOutcome
 >    , "#define OUTCOME_NAMES { " ++
 >        consperse "," (map quote outcomeNames) ++ " }"

@@ -15,7 +15,7 @@
 // =====
 
 // Shared variables in litmus test
-typedef int8_t var_t;
+typedef int64_t var_t;
 
 typedef struct {
   // The outcome vector
@@ -28,7 +28,7 @@ typedef struct {
   volatile uint32_t  delays[NUM_PROCESSES];
 
   // All the locations that a shared variable can reside
-  volatile var_t     locs[NUM_LOCS];
+  volatile var_t*    locs;
 
   // The locations of the shared variables for the current test
   volatile var_t*    vars[NUM_VARS];

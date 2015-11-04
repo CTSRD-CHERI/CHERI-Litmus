@@ -11,9 +11,9 @@ Orig=SyncdRW Rfe SyncdRW Rfe
 1:r2=y; 1:r4=x; 
 }
  P0           | P1           ;
- lb  r1,0(r2) | lb  r1,0(r2) ;
+ lw  r1,0(r2) | lw  r1,0(r2) ;
  sync         | sync         ;
  li r3,1      | li r3,1      ;
- sb  r3,0(r4) | sb  r3,0(r4) ;
+ sw  r3,0(r4) | sw  r3,0(r4) ;
 exists
 (0:r1=1 /\ 1:r1=1)
