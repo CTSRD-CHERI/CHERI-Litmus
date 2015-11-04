@@ -1,0 +1,23 @@
+MIPS A
+"PodWW Wse PodWR Fre PodWR Fre PodWR Fre"
+Prefetch=0:x=F,0:y=W,1:y=F,1:z=T,2:z=F,2:a=T,3:a=F,3:x=T
+Com=Ws Fr Fr Fr
+Orig=PodWW Wse PodWR Fre PodWR Fre PodWR Fre
+
+{
+
+0:rx=x; 0:ry=y;
+1:ry=y; 1:rz=z;
+2:rz=z; 2:ra=a;
+3:ra=a; 3:rx=x;
+
+}
+
+ P0           | P1           | P2           | P3           ;
+ li r2,1      | li r2,2      | li r2,1      | li r2,1      ;
+ sw r2,0( rx) | sw r2,0( ry) | sw r2,0( rz) | sw r2,0( ra) ;
+ li r3,1      | lw r3,0( rz) | lw r3,0( ra) | lw r3,0( rx) ;
+ sw r3,0( ry) |              |              |              ;
+exists
+(y=2 /\ 1:r3=0 /\ 2:r3=0 /\ 3:r3=0)
+

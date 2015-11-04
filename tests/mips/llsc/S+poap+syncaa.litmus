@@ -1,0 +1,29 @@
+MIPS A
+"PodWWANa RfeNaA SyncdRWAA WseAA"
+Prefetch=0:x=F,0:y=W,1:y=F,1:x=W
+Com=Rf Ws
+Orig=PodWWANa RfeNaA SyncdRWAA WseAA
+
+{
+
+0:rx=x; 0:ry=y;
+1:ry=y; 1:rx=x;
+
+}
+
+ P0                | P1                ;
+ li r2,2           | Loop01:           ;
+ Loop00:           | ll r2,0( ry)      ;
+ ll r3,0( rx)      | ori r9992,r2,0      ;
+ ori r9992,r2,0      | sc r9992,0( ry)     ;
+ sc r9992,0( rx)     | beq r9992,0,Loop01 ;
+ beq r9992,0,Loop00 | sync              ;
+ li r4,1           | li r3,1           ;
+ sw r4,0( ry)      | Loop02:           ;
+                   | ll r4,0( rx)      ;
+                   | ori r9992,r3,0      ;
+                   | sc r9992,0( rx)     ;
+                   | beq r9992,0,Loop02 ;
+exists
+(x=2 /\ y=1 /\ 0:r3=1 /\ 1:r2=1 /\ 1:r4=0)
+
