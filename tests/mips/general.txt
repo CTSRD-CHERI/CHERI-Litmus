@@ -1,0 +1,199 @@
+2+2W+sync+po: SyncdWW Wse PodWW Wse
+3.2W+syncs: SyncdWW Wse SyncdWW Wse SyncdWW Wse
+3.2W: PodWW Wse PodWW Wse PodWW Wse
+3.2W+sync+sync+po: SyncdWW Wse SyncdWW Wse PodWW Wse
+3.2W+sync+po+po: SyncdWW Wse PodWW Wse PodWW Wse
+3.LB+addrs: DpAddrdW Rfe DpAddrdW Rfe DpAddrdW Rfe
+3.LB+sync+sync+addr: SyncdRW Rfe SyncdRW Rfe DpAddrdW Rfe
+3.LB+addr+addr+po: DpAddrdW Rfe DpAddrdW Rfe PodRW Rfe
+3.LB+sync+sync+po: SyncdRW Rfe SyncdRW Rfe PodRW Rfe
+3.LB+addr+po+po: DpAddrdW Rfe PodRW Rfe PodRW Rfe
+3.LB+syncs: SyncdRW Rfe SyncdRW Rfe SyncdRW Rfe
+3.LB+sync+addr+po: SyncdRW Rfe DpAddrdW Rfe PodRW Rfe
+3.LB+sync+po+po: SyncdRW Rfe PodRW Rfe PodRW Rfe
+3.LB+sync+addr+addr: SyncdRW Rfe DpAddrdW Rfe DpAddrdW Rfe
+3.LB+addr+sync+po: DpAddrdW Rfe SyncdRW Rfe PodRW Rfe
+3.LB: PodRW Rfe PodRW Rfe PodRW Rfe
+3.SB+sync+sync+po: SyncdWR Fre SyncdWR Fre PodWR Fre
+3.SB: PodWR Fre PodWR Fre PodWR Fre
+3.SB+syncs: SyncdWR Fre SyncdWR Fre SyncdWR Fre
+3.SB+sync+po+po: SyncdWR Fre PodWR Fre PodWR Fre
+IRIW+addr+po: Rfe DpAddrdR Fre Rfe PodRR Fre
+IRIW: Rfe PodRR Fre Rfe PodRR Fre
+IRIW+sync+addr: Rfe SyncdRR Fre Rfe DpAddrdR Fre
+IRIW+sync+po: Rfe SyncdRR Fre Rfe PodRR Fre
+IRIW+syncs: Rfe SyncdRR Fre Rfe SyncdRR Fre
+IRIW+addrs: Rfe DpAddrdR Fre Rfe DpAddrdR Fre
+IRRWIW+addrs: Rfe DpAddrdR Fre Rfe DpAddrdW Wse
+IRRWIW+addr+po: Rfe DpAddrdR Fre Rfe PodRW Wse
+IRRWIW+addr+sync: Rfe DpAddrdR Fre Rfe SyncdRW Wse
+IRRWIW+sync+po: Rfe SyncdRR Fre Rfe PodRW Wse
+IRRWIW+po+sync: Rfe PodRR Fre Rfe SyncdRW Wse
+IRRWIW: Rfe PodRR Fre Rfe PodRW Wse
+IRRWIW+syncs: Rfe SyncdRR Fre Rfe SyncdRW Wse
+IRRWIW+po+addr: Rfe PodRR Fre Rfe DpAddrdW Wse
+IRRWIW+sync+addr: Rfe SyncdRR Fre Rfe DpAddrdW Wse
+IRWIW+sync+addr: Rfe SyncdRW Wse Rfe DpAddrdW Wse
+IRWIW+sync+po: Rfe SyncdRW Wse Rfe PodRW Wse
+IRWIW+addrs: Rfe DpAddrdW Wse Rfe DpAddrdW Wse
+IRWIW+addr+po: Rfe DpAddrdW Wse Rfe PodRW Wse
+IRWIW: Rfe PodRW Wse Rfe PodRW Wse
+IRWIW+syncs: Rfe SyncdRW Wse Rfe SyncdRW Wse
+ISA2+sync+sync+po: SyncdWW Rfe SyncdRW Rfe PodRR Fre
+ISA2+sync+po+po: SyncdWW Rfe PodRW Rfe PodRR Fre
+ISA2+sync+po+addr: SyncdWW Rfe PodRW Rfe DpAddrdR Fre
+ISA2+sync+addr+sync: SyncdWW Rfe DpAddrdW Rfe SyncdRR Fre
+ISA2+sync+po+sync: SyncdWW Rfe PodRW Rfe SyncdRR Fre
+ISA2+sync+addr+addr: SyncdWW Rfe DpAddrdW Rfe DpAddrdR Fre
+ISA2+sync+sync+addr: SyncdWW Rfe SyncdRW Rfe DpAddrdR Fre
+ISA2+sync+addr+po: SyncdWW Rfe DpAddrdW Rfe PodRR Fre
+ISA2+syncs: SyncdWW Rfe SyncdRW Rfe SyncdRR Fre
+LB+sync+po: SyncdRW Rfe PodRW Rfe
+LB+syncs: SyncdRW Rfe SyncdRW Rfe
+LB+sync+addr: SyncdRW Rfe DpAddrdW Rfe
+LB+addr+po: DpAddrdW Rfe PodRW Rfe
+LB: PodRW Rfe PodRW Rfe
+LB+addrs: DpAddrdW Rfe DpAddrdW Rfe
+MP+sync+po: SyncdWW Rfe PodRR Fre
+MP+syncs: SyncdWW Rfe SyncdRR Fre
+MP: PodWW Rfe PodRR Fre
+MP+po+sync: PodWW Rfe SyncdRR Fre
+MP+sync+addr: SyncdWW Rfe DpAddrdR Fre
+MP+po+addr: PodWW Rfe DpAddrdR Fre
+R: PodWW Wse PodWR Fre
+R+syncs: SyncdWW Wse SyncdWR Fre
+R+po+sync: PodWW Wse SyncdWR Fre
+R+sync+po: SyncdWW Wse PodWR Fre
+RWC+sync+po: Rfe SyncdRR Fre PodWR Fre
+RWC+po+sync: Rfe PodRR Fre SyncdWR Fre
+RWC+addr+sync: Rfe DpAddrdR Fre SyncdWR Fre
+RWC: Rfe PodRR Fre PodWR Fre
+RWC+addr+po: Rfe DpAddrdR Fre PodWR Fre
+RWC+syncs: Rfe SyncdRR Fre SyncdWR Fre
+S+po+addr: PodWW Rfe DpAddrdW Wse
+S+syncs: SyncdWW Rfe SyncdRW Wse
+S+po+sync: PodWW Rfe SyncdRW Wse
+S: PodWW Rfe PodRW Wse
+S+sync+addr: SyncdWW Rfe DpAddrdW Wse
+S+sync+po: SyncdWW Rfe PodRW Wse
+SB: PodWR Fre PodWR Fre
+SB+syncs: SyncdWR Fre SyncdWR Fre
+SB+sync+po: SyncdWR Fre PodWR Fre
+WRC+po+addr: Rfe PodRW Rfe DpAddrdR Fre
+WRC+addr+sync: Rfe DpAddrdW Rfe SyncdRR Fre
+WRC+syncs: Rfe SyncdRW Rfe SyncdRR Fre
+WRC+po+sync: Rfe PodRW Rfe SyncdRR Fre
+WRC+addrs: Rfe DpAddrdW Rfe DpAddrdR Fre
+WRC+sync+addr: Rfe SyncdRW Rfe DpAddrdR Fre
+WRC+addr+po: Rfe DpAddrdW Rfe PodRR Fre
+WRC: Rfe PodRW Rfe PodRR Fre
+WRC+sync+po: Rfe SyncdRW Rfe PodRR Fre
+WRR+2W+po+sync: Rfe PodRR Fre SyncdWW Wse
+WRR+2W+sync+po: Rfe SyncdRR Fre PodWW Wse
+WRR+2W+addr+sync: Rfe DpAddrdR Fre SyncdWW Wse
+WRR+2W+addr+po: Rfe DpAddrdR Fre PodWW Wse
+WRR+2W+syncs: Rfe SyncdRR Fre SyncdWW Wse
+WRR+2W: Rfe PodRR Fre PodWW Wse
+WRW+2W+po+sync: Rfe PodRW Wse SyncdWW Wse
+WRW+2W+addr+po: Rfe DpAddrdW Wse PodWW Wse
+WRW+2W+sync+po: Rfe SyncdRW Wse PodWW Wse
+WRW+2W: Rfe PodRW Wse PodWW Wse
+WRW+2W+syncs: Rfe SyncdRW Wse SyncdWW Wse
+WRW+2W+addr+sync: Rfe DpAddrdW Wse SyncdWW Wse
+W+RWC+po+sync+po: PodWW Rfe SyncdRR Fre PodWR Fre
+W+RWC+po+addr+sync: PodWW Rfe DpAddrdR Fre SyncdWR Fre
+W+RWC: PodWW Rfe PodRR Fre PodWR Fre
+W+RWC+sync+addr+sync: SyncdWW Rfe DpAddrdR Fre SyncdWR Fre
+W+RWC+po+sync+sync: PodWW Rfe SyncdRR Fre SyncdWR Fre
+W+RWC+sync+addr+po: SyncdWW Rfe DpAddrdR Fre PodWR Fre
+W+RWC+sync+po+sync: SyncdWW Rfe PodRR Fre SyncdWR Fre
+W+RWC+sync+po+po: SyncdWW Rfe PodRR Fre PodWR Fre
+W+RWC+sync+sync+po: SyncdWW Rfe SyncdRR Fre PodWR Fre
+W+RWC+po+addr+po: PodWW Rfe DpAddrdR Fre PodWR Fre
+W+RWC+syncs: SyncdWW Rfe SyncdRR Fre SyncdWR Fre
+W+RWC+po+po+sync: PodWW Rfe PodRR Fre SyncdWR Fre
+WRW+WR+sync+po: Rfe SyncdRW Wse PodWR Fre
+WRW+WR+addr+po: Rfe DpAddrdW Wse PodWR Fre
+WRW+WR+addr+sync: Rfe DpAddrdW Wse SyncdWR Fre
+WRW+WR+po+sync: Rfe PodRW Wse SyncdWR Fre
+WRW+WR+syncs: Rfe SyncdRW Wse SyncdWR Fre
+WRW+WR: Rfe PodRW Wse PodWR Fre
+WWC+po+addr: Rfe PodRW Rfe DpAddrdW Wse
+WWC+sync+po: Rfe SyncdRW Rfe PodRW Wse
+WWC: Rfe PodRW Rfe PodRW Wse
+WWC+addr+po: Rfe DpAddrdW Rfe PodRW Wse
+WWC+addr+sync: Rfe DpAddrdW Rfe SyncdRW Wse
+WWC+po+sync: Rfe PodRW Rfe SyncdRW Wse
+WWC+syncs: Rfe SyncdRW Rfe SyncdRW Wse
+WWC+sync+addr: Rfe SyncdRW Rfe DpAddrdW Wse
+WWC+addrs: Rfe DpAddrdW Rfe DpAddrdW Wse
+Z6.0+sync+addr+sync: SyncdWW Rfe DpAddrdW Wse SyncdWR Fre
+Z6.0+po+sync+po: PodWW Rfe SyncdRW Wse PodWR Fre
+Z6.0+sync+po+sync: SyncdWW Rfe PodRW Wse SyncdWR Fre
+Z6.0+po+sync+sync: PodWW Rfe SyncdRW Wse SyncdWR Fre
+Z6.0: PodWW Rfe PodRW Wse PodWR Fre
+Z6.0+sync+sync+po: SyncdWW Rfe SyncdRW Wse PodWR Fre
+Z6.0+sync+po+po: SyncdWW Rfe PodRW Wse PodWR Fre
+Z6.0+po+addr+sync: PodWW Rfe DpAddrdW Wse SyncdWR Fre
+Z6.0+po+addr+po: PodWW Rfe DpAddrdW Wse PodWR Fre
+Z6.0+syncs: SyncdWW Rfe SyncdRW Wse SyncdWR Fre
+Z6.0+po+po+sync: PodWW Rfe PodRW Wse SyncdWR Fre
+Z6.0+sync+addr+po: SyncdWW Rfe DpAddrdW Wse PodWR Fre
+Z6.1+sync+sync+addr: SyncdWW Wse SyncdWW Rfe DpAddrdW Wse
+Z6.1: PodWW Wse PodWW Rfe PodRW Wse
+Z6.1+po+po+addr: PodWW Wse PodWW Rfe DpAddrdW Wse
+Z6.1+sync+po+addr: SyncdWW Wse PodWW Rfe DpAddrdW Wse
+Z6.1+sync+po+po: SyncdWW Wse PodWW Rfe PodRW Wse
+Z6.1+po+sync+addr: PodWW Wse SyncdWW Rfe DpAddrdW Wse
+Z6.1+syncs: SyncdWW Wse SyncdWW Rfe SyncdRW Wse
+Z6.1+sync+po+sync: SyncdWW Wse PodWW Rfe SyncdRW Wse
+Z6.1+po+sync+sync: PodWW Wse SyncdWW Rfe SyncdRW Wse
+Z6.1+po+po+sync: PodWW Wse PodWW Rfe SyncdRW Wse
+Z6.1+sync+sync+po: SyncdWW Wse SyncdWW Rfe PodRW Wse
+Z6.1+po+sync+po: PodWW Wse SyncdWW Rfe PodRW Wse
+Z6.2+sync+po+addr: SyncdWW Rfe PodRW Rfe DpAddrdW Wse
+Z6.2+po+sync+addr: PodWW Rfe SyncdRW Rfe DpAddrdW Wse
+Z6.2+sync+addr+po: SyncdWW Rfe DpAddrdW Rfe PodRW Wse
+Z6.2+syncs: SyncdWW Rfe SyncdRW Rfe SyncdRW Wse
+Z6.2+po+addr+po: PodWW Rfe DpAddrdW Rfe PodRW Wse
+Z6.2+po+sync+sync: PodWW Rfe SyncdRW Rfe SyncdRW Wse
+Z6.2+po+po+sync: PodWW Rfe PodRW Rfe SyncdRW Wse
+Z6.2+sync+addr+sync: SyncdWW Rfe DpAddrdW Rfe SyncdRW Wse
+Z6.2+sync+sync+addr: SyncdWW Rfe SyncdRW Rfe DpAddrdW Wse
+Z6.2+po+addr+addr: PodWW Rfe DpAddrdW Rfe DpAddrdW Wse
+Z6.2+po+sync+po: PodWW Rfe SyncdRW Rfe PodRW Wse
+Z6.2+sync+po+po: SyncdWW Rfe PodRW Rfe PodRW Wse
+Z6.2+sync+po+sync: SyncdWW Rfe PodRW Rfe SyncdRW Wse
+Z6.2: PodWW Rfe PodRW Rfe PodRW Wse
+Z6.2+po+addr+sync: PodWW Rfe DpAddrdW Rfe SyncdRW Wse
+Z6.2+po+po+addr: PodWW Rfe PodRW Rfe DpAddrdW Wse
+Z6.2+sync+sync+po: SyncdWW Rfe SyncdRW Rfe PodRW Wse
+Z6.2+sync+addr+addr: SyncdWW Rfe DpAddrdW Rfe DpAddrdW Wse
+Z6.3+po+sync+addr: PodWW Wse SyncdWW Rfe DpAddrdR Fre
+Z6.3+po+sync+sync: PodWW Wse SyncdWW Rfe SyncdRR Fre
+Z6.3+sync+po+addr: SyncdWW Wse PodWW Rfe DpAddrdR Fre
+Z6.3+sync+po+sync: SyncdWW Wse PodWW Rfe SyncdRR Fre
+Z6.3+sync+sync+addr: SyncdWW Wse SyncdWW Rfe DpAddrdR Fre
+Z6.3+po+po+addr: PodWW Wse PodWW Rfe DpAddrdR Fre
+Z6.3+sync+sync+po: SyncdWW Wse SyncdWW Rfe PodRR Fre
+Z6.3: PodWW Wse PodWW Rfe PodRR Fre
+Z6.3+po+po+sync: PodWW Wse PodWW Rfe SyncdRR Fre
+Z6.3+po+sync+po: PodWW Wse SyncdWW Rfe PodRR Fre
+Z6.3+sync+po+po: SyncdWW Wse PodWW Rfe PodRR Fre
+Z6.3+syncs: SyncdWW Wse SyncdWW Rfe SyncdRR Fre
+Z6.4+sync+po+po: SyncdWW Wse PodWR Fre PodWR Fre
+Z6.4+syncs: SyncdWW Wse SyncdWR Fre SyncdWR Fre
+Z6.4+po+po+sync: PodWW Wse PodWR Fre SyncdWR Fre
+Z6.4+po+sync+po: PodWW Wse SyncdWR Fre PodWR Fre
+Z6.4: PodWW Wse PodWR Fre PodWR Fre
+Z6.4+sync+po+sync: SyncdWW Wse PodWR Fre SyncdWR Fre
+Z6.4+po+sync+sync: PodWW Wse SyncdWR Fre SyncdWR Fre
+Z6.4+sync+sync+po: SyncdWW Wse SyncdWR Fre PodWR Fre
+Z6.5+sync+po+sync: SyncdWW Wse PodWW Wse SyncdWR Fre
+Z6.5+po+sync+po: PodWW Wse SyncdWW Wse PodWR Fre
+Z6.5+syncs: SyncdWW Wse SyncdWW Wse SyncdWR Fre
+Z6.5+sync+po+po: SyncdWW Wse PodWW Wse PodWR Fre
+Z6.5+po+po+sync: PodWW Wse PodWW Wse SyncdWR Fre
+Z6.5+po+sync+sync: PodWW Wse SyncdWW Wse SyncdWR Fre
+Z6.5+sync+sync+po: SyncdWW Wse SyncdWW Wse PodWR Fre
+Z6.5: PodWW Wse PodWW Wse PodWR Fre

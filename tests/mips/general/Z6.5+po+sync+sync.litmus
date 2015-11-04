@@ -1,0 +1,23 @@
+MIPS A
+"PodWW Wse SyncdWW Wse SyncdWR Fre"
+Prefetch=0:x=F,0:y=W,1:y=F,1:z=W,2:z=F,2:x=T
+Com=Ws Ws Fr
+Orig=PodWW Wse SyncdWW Wse SyncdWR Fre
+
+{
+
+0:rx=x; 0:ry=y;
+1:ry=y; 1:rz=z;
+2:rz=z; 2:rx=x;
+
+}
+
+ P0           | P1           | P2           ;
+ li r2,1      | li r2,2      | li r2,2      ;
+ sw r2,0( rx) | sw r2,0( ry) | sw r2,0( rz) ;
+ li r3,1      | sync         | sync         ;
+ sw r3,0( ry) | li r3,1      | lw r3,0( rx) ;
+              | sw r3,0( rz) |              ;
+exists
+(y=2 /\ z=2 /\ 2:r3=0)
+
