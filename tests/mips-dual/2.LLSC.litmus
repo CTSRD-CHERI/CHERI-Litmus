@@ -1,0 +1,12 @@
+MIPS 2.LLSC
+"Simple LL/SC atomicity test"
+{
+0:r2=x;
+1:r2=x;
+}
+ P0            | P1 ;
+ ll  r1, 0(r2) | ll  r1, 0(r2) ;
+ add r1, r1, 1 | add r1, r1, 1 ;
+ sc  r1, 0(r2) | sc  r1, 0(r2) ;
+exists
+(0:r1=1 /\ 1:r1=1 /\ x=1)
