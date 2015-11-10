@@ -10,7 +10,7 @@ void test_body(int pid)
       test.start_times[0] = arch_get_counter();
       asm volatile (
         "li  $8, 1                 \n"
-        "sb  $8, 0(%1)             \n"
+        "sw  $8, 0(%1)             \n"
         "lb  %0, 0(%2)             \n"
       : /* output operands */
         "=r"(out0)
@@ -31,7 +31,7 @@ void test_body(int pid)
       test.start_times[1] = arch_get_counter();
       asm volatile (
         "li  $8, 1                 \n"
-        "sb  $8, 0(%1)             \n"
+        "sw  $8, 0(%1)             \n"
         "lb  %0, 0(%2)             \n"
       : /* output operands */
         "=r"(out0)

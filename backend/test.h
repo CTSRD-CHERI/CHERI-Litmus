@@ -15,7 +15,7 @@
 // =====
 
 // Shared variables in litmus test
-typedef int64_t var_t;
+typedef int32_t var_t;
 
 typedef struct {
   // The outcome vector
