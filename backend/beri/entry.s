@@ -29,7 +29,7 @@
   nop
 
   # Simluation only ==========================
-  dli $t0, 0x4000        # Delay to flush UART
+  dli $t0, 0x1000        # Delay to flush UART
   delay:
     daddi $t0, $t0, -1
   bnez $t0, delay
