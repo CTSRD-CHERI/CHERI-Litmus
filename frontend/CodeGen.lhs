@@ -224,7 +224,7 @@ Translation
 >    , "#define NUM_PROCESSES " ++ show numProcesses
 >    , "#define NUM_ITERATIONS 1000"
 >    , "#define NUM_VARS " ++ show numVars
->    , "#define NUM_LOCS 100000"
+>    , "#define NUM_LOCS 10000"
 >    , "#define LOC_GRAIN " ++ show (testGrain test)
 >    , "#define LEN_OUTCOME " ++ show lenOutcome
 >    , "#define OUTCOME_NAMES { " ++
