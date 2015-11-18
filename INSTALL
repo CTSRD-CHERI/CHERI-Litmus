@@ -4,8 +4,8 @@ Dependencies to build the Haskell
 sudo apt-get install ghc
 sudo apt-get install haskell-platform
 
-Dependencies to build the Litmus binaries for CHERI
-===================================================
+Dependencies to build the baremetal litmus binaries for CHERI
+=============================================================
 
 Run 'install-mips-gcc.sh' from the CHERI distribution:
 
