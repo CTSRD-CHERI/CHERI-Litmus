@@ -72,7 +72,7 @@ void barrier_wait(
   asm volatile (
       "1:                                \n"
       "lld    $8, 0(%0)                  \n"
-      "daddu  $8, $8, %1                 \n"
+      "dadd   $8, $8, %1                 \n"
       "scd    $8, 0(%0)                  \n"
       "beqz   $8, 1b                     \n"
       "2:                                \n"
