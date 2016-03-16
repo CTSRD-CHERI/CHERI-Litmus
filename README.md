@@ -1,3 +1,5 @@
+# CHERI-Litmus
+
 This is a very lightweight clone of the [Litmus
 Tool](http://diy.inria.fr/) for running litmus tests (tiny concurrent
 programs) on bare-metal hardware, i.e. with no OS or POSIX
@@ -28,7 +30,7 @@ I had thought about renaming CHERI-Litmus to Bare-Litmus to reflect
 that more than one arch is supported, but it would probably break lots
 of existing build scripts for CHERI.
 
-# Directory layout:
+## Directory layout
 
   * *backend*: the infrastructure to run a generic litmus test
 
@@ -41,7 +43,7 @@ of existing build scripts for CHERI.
   * *binaries*: the make script here can take a path to a set of litmus
     files and produce a set of binaries.
 
-# Instructions:
+## Instructions
 
 To build the frontend (which converts litmus files to C files), type
 `./make.sh` in the `frontend` directory.  The dependencies for
