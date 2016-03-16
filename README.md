@@ -1,7 +1,7 @@
 This is a very lightweight clone of the [Litmus
 Tool](http://diy.inria.fr/) for running litmus tests (tiny concurrent
-programs) on bare-metal hardware, i.e. with no OS or POSIX API
-required.  
+programs) on bare-metal hardware, i.e. with no OS or POSIX
+implementation required.  
 
 It lets us run litmus tests earlier in the design process, on hardware
 that isn't yet capable of booting an OS.  The absence of an OS also
@@ -14,11 +14,19 @@ litmus test, are no longer present.  I believe such effects are relied
 upon in the original Litmus Tool.  In future, it would be useful to
 extend our tool to inject random memory noise to improve variability.
 
-The tool currently supports two architectures:
+The original [Litmus Tool](http://diy.inria.fr/) is far more advanced,
+and should definitely be used in addition to (or instead of)
+CHERI-Litmus as soon as the hardware is sufficiently capable.
+
+CHERI-Litmus currently supports two architectures:
 
 1. [CHERI](https://cheri-cpu.org/) (MIPS64 ISA).
 
 2. [Rocket Chip](https://github.com/ucb-bar/rocket-chip) (RISCV ISA).
+
+I had thought about renaming CHERI-Litmus to Bare-Litmus to reflect
+that more than one arch is supported, but it would probably break lots
+of existing build scripts for CHERI.
 
 # Directory layout:
 
