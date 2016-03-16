@@ -1,0 +1,23 @@
+RISCV
+"Rfe DpAddrdW Rfe DpAddrdW Wse"
+Prefetch=1:x=F,1:y=W,2:y=F,2:x=W
+Com=Rf Rf Ws
+Orig=Rfe DpAddrdW Rfe DpAddrdW Wse
+
+{
+
+0:rx=x;
+1:rx=x; 1:ry=y;
+2:ry=y; 2:rx=x;
+
+}
+
+ P0           | P1              | P2              ;
+ li r2,2      | lw r2,0( rx)    | lw r2,0( ry)    ;
+ sw r2,0( rx) | xor r3,r2,r2    | xor r3,r2,r2    ;
+              | li r4,1         | li r4,1         ;
+              | add r9991,r3, ry | add r9991,r3, rx ;
+              | sw r4,0(r9991)    | sw r4,0(r9991)    ;
+exists
+(x=2 /\ 1:r2=2 /\ 2:r2=1)
+

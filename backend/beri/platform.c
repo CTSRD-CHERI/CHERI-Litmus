@@ -15,6 +15,11 @@ char const* HEAP_BASE = (char const*) 0x9800000000000000;
 volatile uint32_t *jtag_uart_ctrl = (volatile uint32_t *) 0x900000007f000004;
 volatile char     *jtag_uart_data = (volatile char *)     0x900000007f000000;
 
+void flush()
+{
+  // TODO
+}
+
 void put_char(char c)
 {
   // Wait until there is space left in the buffer

@@ -6,20 +6,11 @@ void test_body(int pid)
     case 0: {
       var_t out0;
       arch_barrier_up();
-      delay(test.delays[0]);
-      test.start_times[0] = arch_get_counter();
-      asm volatile (
-        "li  $8, 1                 \n"
-        "sw  $8, 0(%1)             \n"
-        "lb  %0, 0(%2)             \n"
-      : /* output operands */
-        "=r"(out0)
-      : /* input operands */
-        "r"(test.vars[0]),
-        "r"(test.vars[1])
-      : /* clobbered registers */
-        "$8"
-      );
+      delay(test.delays[0]*12);
+
+      *test.vars[0] = 1;
+      out0 = *test.vars[1];
+
       test.outcome[0] = out0;
       arch_barrier_down();
       break;
@@ -27,20 +18,11 @@ void test_body(int pid)
     case 1: {
       var_t out0;
       arch_barrier_up();
-      delay(test.delays[1]);
-      test.start_times[1] = arch_get_counter();
-      asm volatile (
-        "li  $8, 1                 \n"
-        "sw  $8, 0(%1)             \n"
-        "lb  %0, 0(%2)             \n"
-      : /* output operands */
-        "=r"(out0)
-      : /* input operands */
-        "r"(test.vars[1]),
-        "r"(test.vars[0])
-      : /* clobbered registers */
-        "$8"
-      );
+      delay(test.delays[1]*12);
+
+      *test.vars[1] = 1;
+      out0 = *test.vars[0];
+
       test.outcome[1] = out0;
       arch_barrier_down();
       break;

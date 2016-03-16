@@ -7,6 +7,7 @@
 
 int main()
 {
+
   // Get my global process id
   int me = arch_get_process_id();
 
@@ -21,21 +22,15 @@ int main()
   uint32_t seed = 0;
 
   for (int i = 0; i < NUM_ITERATIONS; i++) {
-
     if (me == 0) test_init(&seed);
-
-    //arch_barrier_up();
-
     test_body(me);
-
-    //arch_barrier_down();
-
     if (me == 0) log_update();
   }
 
   if (me == 0) {
     put_string("Observed outcomes:\n");
     log_display();
+    flush();
   }
 
   return 0;

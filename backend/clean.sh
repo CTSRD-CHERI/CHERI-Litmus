@@ -1,1 +1,1 @@
-rm -f main.s *.o *.bin *.elf
+rm -f main.s *.o *.bin *.elf *.hex

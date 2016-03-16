@@ -3,6 +3,7 @@
 #include "io.h"
 #include "hash.h"
 #include "heap.h"
+#include "testcase.h"
 
 // ================
 // Global variables
@@ -57,11 +58,9 @@ void log_headstart()
 
 void log_add_outcome()
 {
-  static uint32_t previous_h = 0;
   uint32_t h = hash( (uint8_t *) test.outcome
                    , LEN_OUTCOME*sizeof(var_t)
                    , 0 );
-  previous_h = h;
   h = h % HASH_TABLE_SIZE;
   for (int i = 0; i < HASH_TABLE_SIZE; i++) {
     log_entry_t *entry = global_log.hash_table + h;
@@ -142,5 +141,7 @@ void log_display_headstart()
 void log_display()
 {
   log_display_outcome();
+  #ifdef SHOW_HEADSTARTS
   log_display_headstart();
+  #endif
 }

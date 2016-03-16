@@ -5,6 +5,7 @@
 
 // Interface to platform-specific code
 
+void flush();
 void put_char(char c);
 extern char const* HEAP_BASE;
 

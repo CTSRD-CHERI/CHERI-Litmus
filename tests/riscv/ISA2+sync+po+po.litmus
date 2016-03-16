@@ -1,0 +1,23 @@
+RISCV
+"SyncdWW Rfe PodRW Rfe PodRR Fre"
+Prefetch=0:x=F,0:y=W,1:y=F,1:z=W,2:z=F,2:x=T
+Com=Rf Rf Fr
+Orig=SyncdWW Rfe PodRW Rfe PodRR Fre
+
+{
+
+0:rx=x; 0:ry=y;
+1:ry=y; 1:rz=z;
+2:rz=z; 2:rx=x;
+
+}
+
+ P0           | P1           | P2           ;
+ li r2,1      | lw r2,0( ry) | lw r2,0( rz) ;
+ sw r2,0( rx) | li r3,1      | lw r3,0( rx) ;
+ fence         | sw r3,0( rz) |              ;
+ li r3,1      |              |              ;
+ sw r3,0( ry) |              |              ;
+exists
+(1:r2=1 /\ 2:r2=1 /\ 2:r3=0)
+

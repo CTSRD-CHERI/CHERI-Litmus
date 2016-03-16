@@ -115,8 +115,12 @@ Return a chunk of inline assembley for a given process in a test.
 >   indent 2
 >     [ if null outVars then "" else "var_t " ++ consperse "," outVars ++ ";"
 >     , "arch_barrier_up();"
->     , "delay(test.delays[" ++ show pid ++ "]);"
->     , "test.start_times[" ++ show pid ++ "] = arch_get_counter();"
+>     , if   testArch test == "RISCV"
+>       then "delay(test.delays[" ++ show pid ++ "]*12);"
+>       else "delay(test.delays[" ++ show pid ++ "]);"
+>     , if   testArch test == "RISCV"
+>       then ""
+>       else "test.start_times[" ++ show pid ++ "] = arch_get_counter();"
 >     , "asm volatile ("
 >     ] ++
 >
@@ -180,7 +184,9 @@ Return a chunk of inline assembley for a given process in a test.
 >     argNames   = ["%" ++ show i | i <- [0..]]
 > 
 >     -- Names for temporary registers (i.e. which are not inputs or outputs)
->     tmpNames   = ["$" ++ show i | i <- [4..25]]
+>     tmpNames   = if   testArch test == "RISCV"
+>                  then ["a" ++ show i | i <- [0..7]]
+>                  else ["$" ++ show i | i <- [4..25]]
 >
 >     -- A substitution to be applied the the litmus assembley listing
 >     sub        = zip outRegs argNames 
@@ -224,13 +230,16 @@ Translation
 >    , "#define NUM_PROCESSES " ++ show numProcesses
 >    , "#define NUM_ITERATIONS 1000"
 >    , "#define NUM_VARS " ++ show numVars
->    , "#define NUM_LOCS 10000"
+>    , "#define NUM_LOCS 65536"
 >    , "#define LOC_GRAIN " ++ show (testGrain test)
 >    , "#define LEN_OUTCOME " ++ show lenOutcome
 >    , "#define OUTCOME_NAMES { " ++
 >        consperse "," (map quote outcomeNames) ++ " }"
 >    , "#define OUTCOME_SOUGHT { " ++
 >        consperse "," outcomeVals ++ " }"
+>    , if   testArch test == "RISCV"
+>      then ""
+>      else "#define SHOW_HEADSTARTS"
 >    , ""
 >    , "#endif"
 >    ]
