@@ -22,7 +22,7 @@ CHERI-Litmus as soon as the hardware is sufficiently capable.
 
 CHERI-Litmus currently supports two architectures:
 
-1. [CHERI](https://cheri-cpu.org/) (MIPS64 ISA).
+1. [CHERI](http://www.cl.cam.ac.uk/research/security/ctsrd/cheri/) (MIPS64 ISA).
 
 2. [Rocket Chip](https://github.com/ucb-bar/rocket-chip) (RISCV ISA).
 
