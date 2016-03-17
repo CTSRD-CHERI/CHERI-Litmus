@@ -1,5 +1,5 @@
-HARTID=0xf10
-TO_HOST=0x780
+HARTID=0xf15
+TO_HOST=0x7c0
 
   # Get hardware thread id
   csrr a0, HARTID

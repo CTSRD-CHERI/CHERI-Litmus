@@ -7,7 +7,6 @@
 
 int main()
 {
-
   // Get my global process id
   int me = arch_get_process_id();
 

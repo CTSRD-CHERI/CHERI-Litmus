@@ -28,9 +28,9 @@ void flush()
 
     asm volatile (
       "fence                    \n"
-      "csrw   0x780, %0         \n"
+      "csrw   0x7c0, %0         \n"
       "1:                       \n"
-      "csrrw  a0, 0x781, 0      \n"
+      "csrrw  a0, 0x7c1, 0      \n"
       "beqz   a0, 1b            \n"
     : /* output operands */
     : /* input operands */

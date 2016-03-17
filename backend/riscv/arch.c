@@ -10,7 +10,7 @@
 int arch_get_process_id()
 {
   uint64_t x;
-  asm volatile("csrr %0, 0xf10" : "=r" (x));
+  asm volatile("csrr %0, 0xf15" : "=r" (x));
   return (int) x;
 }
 
@@ -19,8 +19,8 @@ int arch_get_process_id()
 uint32_t arch_get_counter()
 {
   uint64_t x;
-  //asm volatile("csrr %0, 0xc01" : "=r" (x));
-  asm volatile("csrr %0, 0xc00" : "=r" (x));
+  //asm volatile("csrr %0, 0xf01" : "=r" (x));
+  asm volatile("csrr %0, 0xf00" : "=r" (x));
   return (int) x;
 }
 
