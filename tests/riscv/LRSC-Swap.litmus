@@ -1,0 +1,12 @@
+RISCV
+"LR/SC atomic swap test"
+{
+0:r2=x;
+1:r2=x;
+}
+ P0                  | P1 ;
+ lr.w r1, 0(r2)      | lr.w r1, 0(r2) ;
+ li r3, 1            | li r3, 2 ; 
+ sc.w r4, r3, 0(r2)  | sc.w r4, r3, 0(r2) ;
+exists
+(0:r4=0 /\ 1:r4=0 /\ 0:r1=0 /\ 1:r1=0)

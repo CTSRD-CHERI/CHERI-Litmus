@@ -1,0 +1,15 @@
+RISCV
+"Simple LR/SC atomicity test"
+{
+0:r2=x;
+1:r2=x;
+}
+ P0                  | P1 ;
+ lr.w r1, 0(r2)      | lr.w r1, 0(r2) ;
+ addw r1, r1, 1      | addw r1, r1, 1 ;
+ nop                 | nop ;
+ nop                 | nop ;
+ nop                 | nop ;
+ sc.w r1, r1, 0(r2)  | sc.w r1, r1, 0(r2) ;
+exists
+(0:r1=0 /\ 1:r1=0 /\ x=1)

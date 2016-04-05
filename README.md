@@ -6,15 +6,13 @@ programs) on bare-metal hardware, i.e. with no OS or POSIX
 implementation required.  
 
 It lets us run litmus tests earlier in the design process, on hardware
-that isn't yet capable of booting an OS.  The absence of an OS also
-allows litmus tests to run on an RTL simulator in reasonable time,
-simplifying debugging.
+that isn't yet capable of booting an OS.  It also allows litmus tests
+to run on an RTL simulator in reasonable time, simplifying debugging.
 
 On the downside, the random perturbations due to OS background
 activities, which can surely affect the observable outcomes of a
-litmus test, are no longer present.  I believe such effects are relied
-upon in the original Litmus Tool.  In future, it would be useful to
-extend our tool to inject random memory noise to improve variability.
+litmus test, are no longer present.  Improving variability would be
+worth investigating.
 
 The original [Litmus Tool](http://diy.inria.fr/) is far more advanced,
 and should definitely be used in addition to (or instead of)
