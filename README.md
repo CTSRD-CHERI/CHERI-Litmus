@@ -9,7 +9,7 @@ that isn't yet capable of booting an OS.  It also allows litmus tests
 to run on an RTL simulator in reasonable time, simplifying debugging.
 
 On the downside, the random perturbations due to OS background
-activities, which can surely affect the observable behaviours, are no
+activities, which can affect the observable behaviours, are no
 longer present.  Improving variability in CHERI-Litmus is a topic for
 future work.
 
