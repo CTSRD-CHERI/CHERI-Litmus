@@ -16,7 +16,7 @@ OFILES=""
 for F in $CFILES
 do
   OFILES="$OFILES `basename $F.o`"
-  $CC $CFLAGS -std=gnu99 -Wall $ARCH -c -o `basename $F.o` $F.c
+  $CC $CFLAGS -fno-stack-protector -std=gnu99 -Wall $ARCH -c -o `basename $F.o` $F.c
 done
 
 $AS $CFLAGS -o entry.o beri/entry.s
